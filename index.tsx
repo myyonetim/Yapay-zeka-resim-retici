@@ -16,15 +16,21 @@ const generateBtn = document.getElementById('generate-btn') as HTMLButtonElement
 const imageGallery = document.getElementById('image-gallery');
 const spinner = document.getElementById('spinner');
 const qualitySelect = document.getElementById('quality-select') as HTMLSelectElement;
+const aspectRatioSelect = document.getElementById('aspect-ratio-select') as HTMLSelectElement;
+const styleSelect = document.getElementById('style-select') as HTMLSelectElement;
+
 
 async function generateImages() {
-    if (!promptInput.value || !imageGallery || !generateBtn || !spinner || !qualitySelect) return;
+    if (!promptInput.value || !imageGallery || !generateBtn || !spinner || !qualitySelect || !aspectRatioSelect || !styleSelect) return;
 
-    const imagenPrompt = promptInput.value.trim();
-    if (!imagenPrompt) {
+    const userPrompt = promptInput.value.trim();
+    if (!userPrompt) {
         alert("Lütfen bir istem girin.");
         return;
     }
+
+    const stylePrompt = styleSelect.value;
+    const imagenPrompt = `${userPrompt}${stylePrompt}`;
 
     // Show loading state
     generateBtn.disabled = true;
@@ -37,7 +43,7 @@ async function generateImages() {
             prompt: imagenPrompt,
             config: {
                 numberOfImages: 3,
-                aspectRatio: '16:9',
+                aspectRatio: aspectRatioSelect.value,
                 outputMimeType: 'image/jpeg',
                 includeRaiReason: true,
                 quality: qualitySelect.value,

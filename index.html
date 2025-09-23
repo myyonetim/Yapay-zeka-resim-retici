@@ -17,7 +17,7 @@
     <div class="container mx-auto p-4 max-w-5xl">
         <header class="text-center my-8">
             <h1 class="text-4xl font-extrabold text-white">Yapay Zeka Resim Oluşturucu</h1>
-            <p class="text-gray-400 mt-2">Yaratıcı fikirlerinizi Imagen ile hayata geçirin.</p>
+            <p class="text-gray-400 mt-2">Yaratıcı fikirlerinizi Mykağıtçım ile hayata geçirin.</p>
         </header>
 
         <div class="bg-gray-800 p-6 rounded-xl shadow-lg mb-8">
@@ -25,13 +25,37 @@
                 <label for="prompt-input" class="sr-only">Resim İstemi</label>
                 <textarea id="prompt-input" rows="3" class="w-full bg-gray-700 text-white p-3 rounded-lg border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="Ahmet ismindeki 2 yaşındaki çocuğumun odasına tropikal hayvanlar olan bir poster istiyorum"></textarea>
                 
-                <div>
-                    <label for="quality-select" class="block mb-2 text-sm font-medium text-gray-300">Resim Kalitesi</label>
-                    <select id="quality-select" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="preview">Önizleme</option>
-                        <option value="standard" selected>Standart</option>
-                        <option value="high">Yüksek</option>
-                    </select>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="quality-select" class="block mb-2 text-sm font-medium text-gray-300">Resim Kalitesi</label>
+                        <select id="quality-select" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="preview">Önizleme</option>
+                            <option value="standard" selected>Standart</option>
+                            <option value="high">Yüksek</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="aspect-ratio-select" class="block mb-2 text-sm font-medium text-gray-300">En Boy Oranı</label>
+                        <select id="aspect-ratio-select" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="16:9" selected>16:9 (Geniş Ekran)</option>
+                            <option value="1:1">1:1 (Kare)</option>
+                            <option value="9:16">9:16 (Dikey)</option>
+                            <option value="4:3">4:3 (Manzara)</option>
+                            <option value="3:4">3:4 (Portre)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="style-select" class="block mb-2 text-sm font-medium text-gray-300">Sanat Stili</label>
+                        <select id="style-select" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option value="" selected>Stil Yok</option>
+                            <option value=", photorealistic style">Fotogerçekçi</option>
+                            <option value=", cartoon style">Çizgi Film</option>
+                            <option value=", oil painting style">Yağlı Boya</option>
+                            <option value=", watercolor painting style">Suluboya</option>
+                            <option value=", pixel art style">Piksel Sanatı</option>
+                            <option value=", steampunk style">Steampunk</option>
+                        </select>
+                    </div>
                 </div>
 
                 <button id="generate-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 disabled:bg-gray-500 disabled:cursor-not-allowed flex items-center justify-center gap-2">
