@@ -7,7 +7,7 @@
 import {GoogleGenAI, GeneratedImage} from '@google/genai';
 
 // Use the environment variable for the API key
-const ai = new GoogleGenAI({apiKey:AIzaSyCCnCRM56gLlYi8dDC9Hod9Le5PwRfUBAg});
+const ai = new GoogleGenAI({apiKey:});
 
 const selectedModel = 'imagen-4.0-generate-001';
 
